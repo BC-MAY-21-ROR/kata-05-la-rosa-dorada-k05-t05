@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ruby Critic - Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- StyleSheets -->
+    <link href="assets/vendor/stylesheets/bootstrap.min.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="assets/vendor/stylesheets/font-awesome.min.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="assets/vendor/stylesheets/prettify.custom_theme.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="assets/stylesheets/application.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <header class="navbar navbar-default navbar-fixed-top">
+      <a href="#menu-toggle" class="btn btn-default hidden-lg visible-sm-* hidden-md visible-xs-* pull-left" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
+      <a href="overview.html"><img src="assets/images/logo.png" alt="Ruby Critic Logo" title="Ruby Critic Logo" width="55"><span class="logo">RUBYCRITIC</span></a>
+      
+    </header>
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <aside id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-item">
+            <a href="overview.html" class="project-nav-item overview-nav"><i class="fa fa-dashboard"></i>Overview</a>
+          </li>
+          <li class="sidebar-item">
+            <a href="code_index.html" class="project-nav-item code-index-nav"><i class="fa fa-code"></i>Code</a>
+          </li>
+          <li class="sidebar-item">
+            <a href="smells_index.html" class="project-nav-item smells-index-nav"><i class="fa fa-warning"></i>Smells</a>
+          </li>
+          <li class="sidebar-item">
+            <a href="simple_cov_index.html" class="project-nav-item coverage-index-nav"><i class="fa fa-umbrella"></i>Coverage</a>
+          </li>
+        </ul>
+      </aside>
+      <!-- /#sidebar-wrapper -->
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+  <!--Page Title -->
+  <div class="Page_Title">
+    <div class="file-time">
+      <span class="committed-at">
+        
+          Never committed
+        
+      </span>
+    </div>
+    <div>
+      <h3><small>. /</small> gilded_rose_spec.rb</h3>
+    </div>
+  </div>
+  <!--End Page Title -->
+  <div class="Content_Wrapper">
+    <!-- code detail -->
+    <div class="code-top-detail clearfix row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-1">
+            <div class="rating f big">
+              F
+            </div>
+          </div>
+          <div class="code-statistics col-md-11">
+            <div class="col-md-3">
+              <div><span class="metric">103</span><small> lines of codes</small></div>
+              <div><span class="metric">0</span><small> methods</small></div>
+            </div>
+            <div class="col-md-3">
+              <div><span class="metric">N/A</span><small> complexity/method</small></div>
+              <div><span class="metric">0</span><small> churn</small></div>
+            </div>
+            <div class="col-md-3">
+              <div><span class="metric">243.34</span><small> complexity</small></div>
+              <div><span class="metric">345</span><small> duplications</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="code-tabs">
+          <ul class="nav nav-pills right-to-left">
+            <li><a href="#" id="toggle-code" class="toggle-button button">code</a></li>
+            <li class="active">
+              <a href="#" id="toggle-smells" class="toggle-button button">
+                1
+                smell
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <code class="prettyprint linenums lang-ruby file-code js-file-code"># frozen_string_literal: true
+
+require File.join(File.dirname(__FILE__), &#39;gilded_rose&#39;)
+
+describe GildedRose do
+  describe &#39;#update_quality&#39; do
+    it &#39;does not change the name&#39; do
+      items = [Item.new(&#39;foo&#39;, 0, 0)]
+      GildedRose.new(items).update_quality
+      expect(items[0].name).to eq &#39;foo&#39;
+    end
+
+    it &#39;does quality degrades when the GildedRose update quality&#39; do<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 15 nodes</span>              <span>Locations:</span>                  <a href="gilded_rose_spec.html#L13" class="js-smell-location">0</a>                  <a href="gilded_rose_spec.html#L19" class="js-smell-location">1</a>                  <a href="gilded_rose_spec.html#L25" class="js-smell-location">2</a>                  <a href="gilded_rose_spec.html#L31" class="js-smell-location">3</a>                  <a href="gilded_rose_spec.html#L37" class="js-smell-location">4</a>                  <a href="gilded_rose_spec.html#L43" class="js-smell-location">5</a>                  <a href="gilded_rose_spec.html#L49" class="js-smell-location">6</a>                  <a href="gilded_rose_spec.html#L55" class="js-smell-location">7</a>                  <a href="gilded_rose_spec.html#L61" class="js-smell-location">8</a>                  <a href="gilded_rose_spec.html#L67" class="js-smell-location">9</a>                  <a href="gilded_rose_spec.html#L73" class="js-smell-location">10</a>                  <a href="gilded_rose_spec.html#L79" class="js-smell-location">11</a>                  <a href="gilded_rose_spec.html#L85" class="js-smell-location">12</a>                  <a href="gilded_rose_spec.html#L91" class="js-smell-location">13</a>                  <a href="gilded_rose_spec.html#L97" class="js-smell-location">14</a>                  </div>  </li></ol>
+      items = [Item.new(&#39;foo&#39;, 2, 6)]
+      GildedRose.new(items).update_quality
+      expect(items[0].quality).to eql 5
+    end
+
+    it &#39;does SellIn degrades when the GildedRose update quality&#39; do<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 15 nodes</span>              <span>Locations:</span>                  <a href="gilded_rose_spec.html#L13" class="js-smell-location">0</a>                  <a href="gilded_rose_spec.html#L19" class="js-smell-location">1</a>                  <a href="gilded_rose_spec.html#L25" class="js-smell-location">2</a>                  <a href="gilded_rose_spec.html#L31" class="js-smell-location">3</a>                  <a href="gilded_rose_spec.html#L37" class="js-smell-location">4</a>                  <a href="gilded_rose_spec.html#L43" class="js-smell-location">5</a>                  <a href="gilded_rose_spec.html#L49" class="js-smell-location">6</a>                  <a href="gilded_rose_spec.html#L55" class="js-smell-location">7</a>                  <a href="gilded_rose_spec.html#L61" class="js-smell-location">8</a>                  <a href="gilded_rose_spec.html#L67" class="js-smell-location">9</a>                  <a href="gilded_rose_spec.html#L73" class="js-smell-location">10</a>                  <a href="gilded_rose_spec.html#L79" class="js-smell-location">11</a>                  <a href="gilded_rose_spec.html#L85" class="js-smell-location">12</a>                  <a href="gilded_rose_spec.html#L91" class="js-smell-location">13</a>                  <a href="gilded_rose_spec.html#L97" class="js-smell-location">14</a>                  </div>  </li></ol>
+      items = [Item.new(&#39;foo&#39;, 2, 6)]
+      GildedRose.new(items).update_quality
+      expect(items[0].sell_in).to eql 1
+    end
+
+    it &#39;does quality degrades twice as fast, once the sell by date has passed&#39; do<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 15 nodes</span>              <span>Locations:</span>                  <a href="gilded_rose_spec.html#L13" class="js-smell-location">0</a>                  <a href="gilded_rose_spec.html#L19" class="js-smell-location">1</a>                  <a href="gilded_rose_spec.html#L25" class="js-smell-location">2</a>                  <a href="gilded_rose_spec.html#L31" class="js-smell-location">3</a>                  <a href="gilded_rose_spec.html#L37" class="js-smell-location">4</a>                  <a href="gilded_rose_spec.html#L43" class="js-smell-location">5</a>                  <a href="gilded_rose_spec.html#L49" class="js-smell-location">6</a>                  <a href="gilded_rose_spec.html#L55" class="js-smell-location">7</a>                  <a href="gilded_rose_spec.html#L61" class="js-smell-location">8</a>                  <a href="gilded_rose_spec.html#L67" class="js-smell-location">9</a>                  <a href="gilded_rose_spec.html#L73" class="js-smell-location">10</a>                  <a href="gilded_rose_spec.html#L79" class="js-smell-location">11</a>                  <a href="gilded_rose_spec.html#L85" class="js-smell-location">12</a>                  <a href="gilded_rose_spec.html#L91" class="js-smell-location">13</a>                  <a href="gilded_rose_spec.html#L97" class="js-smell-location">14</a>                  </div>  </li></ol>
+      items = [Item.new(&#39;foo&#39;, 0, 6)]
+      GildedRose.new(items).update_quality
+      expect(items[0].quality).to eql 4
+    end
+
+    it &#39;does Aged Brie increase the quality the older it gets&#39; do<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 15 nodes</span>              <span>Locations:</span>                  <a href="gilded_rose_spec.html#L13" class="js-smell-location">0</a>                  <a href="gilded_rose_spec.html#L19" class="js-smell-location">1</a>                  <a href="gilded_rose_spec.html#L25" class="js-smell-location">2</a>                  <a href="gilded_rose_spec.html#L31" class="js-smell-location">3</a>                  <a href="gilded_rose_spec.html#L37" class="js-smell-location">4</a>                  <a href="gilded_rose_spec.html#L43" class="js-smell-location">5</a>                  <a href="gilded_rose_spec.html#L49" class="js-smell-location">6</a>                  <a href="gilded_rose_spec.html#L55" class="js-smell-location">7</a>                  <a href="gilded_rose_spec.html#L61" class="js-smell-location">8</a>                  <a href="gilded_rose_spec.html#L67" class="js-smell-location">9</a>                  <a href="gilded_rose_spec.html#L73" class="js-smell-location">10</a>                  <a href="gilded_rose_spec.html#L79" class="js-smell-location">11</a>                  <a href="gilded_rose_spec.html#L85" class="js-smell-location">12</a>                  <a href="gilded_rose_spec.html#L91" class="js-smell-location">13</a>                  <a href="gilded_rose_spec.html#L97" class="js-smell-location">14</a>                  </div>  </li></ol>
+      items = [Item.new(&#39;Aged Brie&#39;, 1, 0)]
+      GildedRose.new(items).update_quality
+      expect(items[0].quality).to eql 1
+    end
+
+    it &#39;does Aged Brie increase twice fast the quality, once the sell by date has passed&#39; do<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 15 nodes</span>              <span>Locations:</span>                  <a href="gilded_rose_spec.html#L13" class="js-smell-location">0</a>                  <a href="gilded_rose_spec.html#L19" class="js-smell-location">1</a>                  <a href="gilded_rose_spec.html#L25" class="js-smell-location">2</a>                  <a href="gilded_rose_spec.html#L31" class="js-smell-location">3</a>                  <a href="gilded_rose_spec.html#L37" class="js-smell-location">4</a>                  <a href="gilded_rose_spec.html#L43" class="js-smell-location">5</a>                  <a href="gilded_rose_spec.html#L49" class="js-smell-location">6</a>                  <a href="gilded_rose_spec.html#L55" class="js-smell-location">7</a>                  <a href="gilded_rose_spec.html#L61" class="js-smell-location">8</a>                  <a href="gilded_rose_spec.html#L67" class="js-smell-location">9</a>                  <a href="gilded_rose_spec.html#L73" class="js-smell-location">10</a>                  <a href="gilded_rose_spec.html#L79" class="js-smell-location">11</a>                  <a href="gilded_rose_spec.html#L85" class="js-smell-location">12</a>                  <a href="gilded_rose_spec.html#L91" class="js-smell-location">13</a>                  <a href="gilded_rose_spec.html#L97" class="js-smell-location">14</a>                  </div>  </li></ol>
+      items = [Item.new(&#39;Aged Brie&#39;, 0, 0)]
+      GildedRose.new(items).update_quality
+      expect(items[0].quality).to eql 2
+    end
+
+    it &#39;does Aged Brie quality is never more than 50&#39; do<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 15 nodes</span>              <span>Locations:</span>                  <a href="gilded_rose_spec.html#L13" class="js-smell-location">0</a>                  <a href="gilded_rose_spec.html#L19" class="js-smell-location">1</a>                  <a href="gilded_rose_spec.html#L25" class="js-smell-location">2</a>                  <a href="gilded_rose_spec.html#L31" class="js-smell-location">3</a>                  <a href="gilded_rose_spec.html#L37" class="js-smell-location">4</a>                  <a href="gilded_rose_spec.html#L43" class="js-smell-location">5</a>                  <a href="gilded_rose_spec.html#L49" class="js-smell-location">6</a>                  <a href="gilded_rose_spec.html#L55" class="js-smell-location">7</a>                  <a href="gilded_rose_spec.html#L61" class="js-smell-location">8</a>                  <a href="gilded_rose_spec.html#L67" class="js-smell-location">9</a>                  <a href="gilded_rose_spec.html#L73" class="js-smell-location">10</a>                  <a href="gilded_rose_spec.html#L79" class="js-smell-location">11</a>                  <a href="gilded_rose_spec.html#L85" class="js-smell-location">12</a>                  <a href="gilded_rose_spec.html#L91" class="js-smell-location">13</a>                  <a href="gilded_rose_spec.html#L97" class="js-smell-location">14</a>                  </div>  </li></ol>
+      items = [Item.new(&#39;Aged Brie&#39;, 0, 49)]
+      GildedRose.new(items).update_quality
+      expect(items[0].quality).to eql 50
+    end
+
+    it &#39;does Sulfuras never decreases in Quality&#39; do<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 15 nodes</span>              <span>Locations:</span>                  <a href="gilded_rose_spec.html#L13" class="js-smell-location">0</a>                  <a href="gilded_rose_spec.html#L19" class="js-smell-location">1</a>                  <a href="gilded_rose_spec.html#L25" class="js-smell-location">2</a>                  <a href="gilded_rose_spec.html#L31" class="js-smell-location">3</a>                  <a href="gilded_rose_spec.html#L37" class="js-smell-location">4</a>                  <a href="gilded_rose_spec.html#L43" class="js-smell-location">5</a>                  <a href="gilded_rose_spec.html#L49" class="js-smell-location">6</a>                  <a href="gilded_rose_spec.html#L55" class="js-smell-location">7</a>                  <a href="gilded_rose_spec.html#L61" class="js-smell-location">8</a>                  <a href="gilded_rose_spec.html#L67" class="js-smell-location">9</a>                  <a href="gilded_rose_spec.html#L73" class="js-smell-location">10</a>                  <a href="gilded_rose_spec.html#L79" class="js-smell-location">11</a>                  <a href="gilded_rose_spec.html#L85" class="js-smell-location">12</a>                  <a href="gilded_rose_spec.html#L91" class="js-smell-location">13</a>                  <a href="gilded_rose_spec.html#L97" class="js-smell-location">14</a>                  </div>  </li></ol>
+      items = [Item.new(&#39;Sulfuras, Hand of Ragnaros&#39;, 10, 10)]
+      GildedRose.new(items).update_quality
+      expect(items[0].quality).to eql 10
+    end
+
+    it &#39;does Sulfuras never has to be sold&#39; do<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 15 nodes</span>              <span>Locations:</span>                  <a href="gilded_rose_spec.html#L13" class="js-smell-location">0</a>                  <a href="gilded_rose_spec.html#L19" class="js-smell-location">1</a>                  <a href="gilded_rose_spec.html#L25" class="js-smell-location">2</a>                  <a href="gilded_rose_spec.html#L31" class="js-smell-location">3</a>                  <a href="gilded_rose_spec.html#L37" class="js-smell-location">4</a>                  <a href="gilded_rose_spec.html#L43" class="js-smell-location">5</a>                  <a href="gilded_rose_spec.html#L49" class="js-smell-location">6</a>                  <a href="gilded_rose_spec.html#L55" class="js-smell-location">7</a>                  <a href="gilded_rose_spec.html#L61" class="js-smell-location">8</a>                  <a href="gilded_rose_spec.html#L67" class="js-smell-location">9</a>                  <a href="gilded_rose_spec.html#L73" class="js-smell-location">10</a>                  <a href="gilded_rose_spec.html#L79" class="js-smell-location">11</a>                  <a href="gilded_rose_spec.html#L85" class="js-smell-location">12</a>                  <a href="gilded_rose_spec.html#L91" class="js-smell-location">13</a>                  <a href="gilded_rose_spec.html#L97" class="js-smell-location">14</a>                  </div>  </li></ol>
+      items = [Item.new(&#39;Sulfuras, Hand of Ragnaros&#39;, 10, 10)]
+      GildedRose.new(items).update_quality
+      expect(items[0].sell_in).to eql 10
+    end
+
+    it &#39;does Backstage passes increases in Quality as its SellIn value approaches&#39; do<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 15 nodes</span>              <span>Locations:</span>                  <a href="gilded_rose_spec.html#L13" class="js-smell-location">0</a>                  <a href="gilded_rose_spec.html#L19" class="js-smell-location">1</a>                  <a href="gilded_rose_spec.html#L25" class="js-smell-location">2</a>                  <a href="gilded_rose_spec.html#L31" class="js-smell-location">3</a>                  <a href="gilded_rose_spec.html#L37" class="js-smell-location">4</a>                  <a href="gilded_rose_spec.html#L43" class="js-smell-location">5</a>                  <a href="gilded_rose_spec.html#L49" class="js-smell-location">6</a>                  <a href="gilded_rose_spec.html#L55" class="js-smell-location">7</a>                  <a href="gilded_rose_spec.html#L61" class="js-smell-location">8</a>                  <a href="gilded_rose_spec.html#L67" class="js-smell-location">9</a>                  <a href="gilded_rose_spec.html#L73" class="js-smell-location">10</a>                  <a href="gilded_rose_spec.html#L79" class="js-smell-location">11</a>                  <a href="gilded_rose_spec.html#L85" class="js-smell-location">12</a>                  <a href="gilded_rose_spec.html#L91" class="js-smell-location">13</a>                  <a href="gilded_rose_spec.html#L97" class="js-smell-location">14</a>                  </div>  </li></ol>
+      items = [Item.new(&#39;Backstage passes to a TAFKAL80ETC concert&#39;, 20, 10)]
+      GildedRose.new(items).update_quality
+      expect(items[0].quality).to eql 11
+    end
+
+    it &#39;does Backstage passes increases in Quality as its SellIn value approaches to ten days or less&#39; do<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 15 nodes</span>              <span>Locations:</span>                  <a href="gilded_rose_spec.html#L13" class="js-smell-location">0</a>                  <a href="gilded_rose_spec.html#L19" class="js-smell-location">1</a>                  <a href="gilded_rose_spec.html#L25" class="js-smell-location">2</a>                  <a href="gilded_rose_spec.html#L31" class="js-smell-location">3</a>                  <a href="gilded_rose_spec.html#L37" class="js-smell-location">4</a>                  <a href="gilded_rose_spec.html#L43" class="js-smell-location">5</a>                  <a href="gilded_rose_spec.html#L49" class="js-smell-location">6</a>                  <a href="gilded_rose_spec.html#L55" class="js-smell-location">7</a>                  <a href="gilded_rose_spec.html#L61" class="js-smell-location">8</a>                  <a href="gilded_rose_spec.html#L67" class="js-smell-location">9</a>                  <a href="gilded_rose_spec.html#L73" class="js-smell-location">10</a>                  <a href="gilded_rose_spec.html#L79" class="js-smell-location">11</a>                  <a href="gilded_rose_spec.html#L85" class="js-smell-location">12</a>                  <a href="gilded_rose_spec.html#L91" class="js-smell-location">13</a>                  <a href="gilded_rose_spec.html#L97" class="js-smell-location">14</a>                  </div>  </li></ol>
+      items = [Item.new(&#39;Backstage passes to a TAFKAL80ETC concert&#39;, 10, 10)]
+      GildedRose.new(items).update_quality
+      expect(items[0].quality).to eql 12
+    end
+
+    it &#39;does Backstage passes increases in Quality as its SellIn value approaches to five days or less&#39; do<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 15 nodes</span>              <span>Locations:</span>                  <a href="gilded_rose_spec.html#L13" class="js-smell-location">0</a>                  <a href="gilded_rose_spec.html#L19" class="js-smell-location">1</a>                  <a href="gilded_rose_spec.html#L25" class="js-smell-location">2</a>                  <a href="gilded_rose_spec.html#L31" class="js-smell-location">3</a>                  <a href="gilded_rose_spec.html#L37" class="js-smell-location">4</a>                  <a href="gilded_rose_spec.html#L43" class="js-smell-location">5</a>                  <a href="gilded_rose_spec.html#L49" class="js-smell-location">6</a>                  <a href="gilded_rose_spec.html#L55" class="js-smell-location">7</a>                  <a href="gilded_rose_spec.html#L61" class="js-smell-location">8</a>                  <a href="gilded_rose_spec.html#L67" class="js-smell-location">9</a>                  <a href="gilded_rose_spec.html#L73" class="js-smell-location">10</a>                  <a href="gilded_rose_spec.html#L79" class="js-smell-location">11</a>                  <a href="gilded_rose_spec.html#L85" class="js-smell-location">12</a>                  <a href="gilded_rose_spec.html#L91" class="js-smell-location">13</a>                  <a href="gilded_rose_spec.html#L97" class="js-smell-location">14</a>                  </div>  </li></ol>
+      items = [Item.new(&#39;Backstage passes to a TAFKAL80ETC concert&#39;, 5, 10)]
+      GildedRose.new(items).update_quality
+      expect(items[0].quality).to eql 13
+    end
+
+    it &#39;does Backstage passes Quality drops to 0 after the concert&#39; do<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 15 nodes</span>              <span>Locations:</span>                  <a href="gilded_rose_spec.html#L13" class="js-smell-location">0</a>                  <a href="gilded_rose_spec.html#L19" class="js-smell-location">1</a>                  <a href="gilded_rose_spec.html#L25" class="js-smell-location">2</a>                  <a href="gilded_rose_spec.html#L31" class="js-smell-location">3</a>                  <a href="gilded_rose_spec.html#L37" class="js-smell-location">4</a>                  <a href="gilded_rose_spec.html#L43" class="js-smell-location">5</a>                  <a href="gilded_rose_spec.html#L49" class="js-smell-location">6</a>                  <a href="gilded_rose_spec.html#L55" class="js-smell-location">7</a>                  <a href="gilded_rose_spec.html#L61" class="js-smell-location">8</a>                  <a href="gilded_rose_spec.html#L67" class="js-smell-location">9</a>                  <a href="gilded_rose_spec.html#L73" class="js-smell-location">10</a>                  <a href="gilded_rose_spec.html#L79" class="js-smell-location">11</a>                  <a href="gilded_rose_spec.html#L85" class="js-smell-location">12</a>                  <a href="gilded_rose_spec.html#L91" class="js-smell-location">13</a>                  <a href="gilded_rose_spec.html#L97" class="js-smell-location">14</a>                  </div>  </li></ol>
+      items = [Item.new(&#39;Backstage passes to a TAFKAL80ETC concert&#39;, 0, 10)]
+      GildedRose.new(items).update_quality
+      expect(items[0].quality).to eql 0
+    end
+
+    it &#39;does Backstage quality is never more than 50&#39; do<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 15 nodes</span>              <span>Locations:</span>                  <a href="gilded_rose_spec.html#L13" class="js-smell-location">0</a>                  <a href="gilded_rose_spec.html#L19" class="js-smell-location">1</a>                  <a href="gilded_rose_spec.html#L25" class="js-smell-location">2</a>                  <a href="gilded_rose_spec.html#L31" class="js-smell-location">3</a>                  <a href="gilded_rose_spec.html#L37" class="js-smell-location">4</a>                  <a href="gilded_rose_spec.html#L43" class="js-smell-location">5</a>                  <a href="gilded_rose_spec.html#L49" class="js-smell-location">6</a>                  <a href="gilded_rose_spec.html#L55" class="js-smell-location">7</a>                  <a href="gilded_rose_spec.html#L61" class="js-smell-location">8</a>                  <a href="gilded_rose_spec.html#L67" class="js-smell-location">9</a>                  <a href="gilded_rose_spec.html#L73" class="js-smell-location">10</a>                  <a href="gilded_rose_spec.html#L79" class="js-smell-location">11</a>                  <a href="gilded_rose_spec.html#L85" class="js-smell-location">12</a>                  <a href="gilded_rose_spec.html#L91" class="js-smell-location">13</a>                  <a href="gilded_rose_spec.html#L97" class="js-smell-location">14</a>                  </div>  </li></ol>
+      items = [Item.new(&#39;Backstage passes to a TAFKAL80ETC concert&#39;, 2, 49)]
+      GildedRose.new(items).update_quality
+      expect(items[0].quality).to eql 50
+    end
+
+    it &#39;does Conjured degrade in Quality twice as fast as normal items&#39; do<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 15 nodes</span>              <span>Locations:</span>                  <a href="gilded_rose_spec.html#L13" class="js-smell-location">0</a>                  <a href="gilded_rose_spec.html#L19" class="js-smell-location">1</a>                  <a href="gilded_rose_spec.html#L25" class="js-smell-location">2</a>                  <a href="gilded_rose_spec.html#L31" class="js-smell-location">3</a>                  <a href="gilded_rose_spec.html#L37" class="js-smell-location">4</a>                  <a href="gilded_rose_spec.html#L43" class="js-smell-location">5</a>                  <a href="gilded_rose_spec.html#L49" class="js-smell-location">6</a>                  <a href="gilded_rose_spec.html#L55" class="js-smell-location">7</a>                  <a href="gilded_rose_spec.html#L61" class="js-smell-location">8</a>                  <a href="gilded_rose_spec.html#L67" class="js-smell-location">9</a>                  <a href="gilded_rose_spec.html#L73" class="js-smell-location">10</a>                  <a href="gilded_rose_spec.html#L79" class="js-smell-location">11</a>                  <a href="gilded_rose_spec.html#L85" class="js-smell-location">12</a>                  <a href="gilded_rose_spec.html#L91" class="js-smell-location">13</a>                  <a href="gilded_rose_spec.html#L97" class="js-smell-location">14</a>                  </div>  </li></ol>
+      items = [Item.new(&#39;Conjured Potion&#39;, 2, 10)]
+      GildedRose.new(items).update_quality
+      expect(items[0].quality).to eql 8
+    end
+
+    it &#39;does Conjured degrade in Quality twice as fast as normal items even the SellIn date has passed&#39; do<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 15 nodes</span>              <span>Locations:</span>                  <a href="gilded_rose_spec.html#L13" class="js-smell-location">0</a>                  <a href="gilded_rose_spec.html#L19" class="js-smell-location">1</a>                  <a href="gilded_rose_spec.html#L25" class="js-smell-location">2</a>                  <a href="gilded_rose_spec.html#L31" class="js-smell-location">3</a>                  <a href="gilded_rose_spec.html#L37" class="js-smell-location">4</a>                  <a href="gilded_rose_spec.html#L43" class="js-smell-location">5</a>                  <a href="gilded_rose_spec.html#L49" class="js-smell-location">6</a>                  <a href="gilded_rose_spec.html#L55" class="js-smell-location">7</a>                  <a href="gilded_rose_spec.html#L61" class="js-smell-location">8</a>                  <a href="gilded_rose_spec.html#L67" class="js-smell-location">9</a>                  <a href="gilded_rose_spec.html#L73" class="js-smell-location">10</a>                  <a href="gilded_rose_spec.html#L79" class="js-smell-location">11</a>                  <a href="gilded_rose_spec.html#L85" class="js-smell-location">12</a>                  <a href="gilded_rose_spec.html#L91" class="js-smell-location">13</a>                  <a href="gilded_rose_spec.html#L97" class="js-smell-location">14</a>                  </div>  </li></ol>
+      items = [Item.new(&#39;Conjured Golden Fish&#39;, 0, 10)]
+      GildedRose.new(items).update_quality
+      expect(items[0].quality).to eql 6
+    end
+  end
+end
+</code>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src="assets/vendor/javascripts/jquery.min.js"></script>
+    <script src="assets/vendor/javascripts/jquery.tablesorter.min.js"></script>
+    <script src="assets/vendor/javascripts/jquery.scrollTo.min.js"></script>
+    <script src="assets/vendor/javascripts/jquery.timeago.js"></script>
+    <script src="assets/vendor/javascripts/highcharts.src-4.0.1.js"></script>
+    <script src="assets/vendor/javascripts/prettify.js"></script>
+    <script src="assets/vendor/javascripts/bootstrap.min.js"></script>
+    <script src="assets/javascripts/application.js"></script>
+    <script src="assets/vendor/javascripts/jquery.filtertable.min.js"></script>
+  </body>
+</html>
